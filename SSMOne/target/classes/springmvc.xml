@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/cache"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+<!--启动注解驱动-->
+    <mvc:annotation-driven/>
+
+<!--    扫描业务代码-->
+<!--    这个扫描是宁可多扫也不要漏掉一些东西-->
+    <context:component-scan base-package="com.mhpsy"/>
+
+<!--    配置视图解析器-->
+<!--    这个bean不需要加到其他的组件里面所以不需要设置id-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/"/>
+    </bean>
+</beans>
