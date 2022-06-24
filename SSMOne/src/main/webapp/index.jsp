@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-    <c:forEach items="${kust}" var="user">
+    <c:forEach items="${list}" var="user">
         ${user.id}--${user.name}<br>
     </c:forEach>
 </body>
